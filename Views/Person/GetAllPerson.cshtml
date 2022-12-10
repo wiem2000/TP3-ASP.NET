@@ -1,0 +1,55 @@
+﻿@model IEnumerable<asp_tp3.Models.Person>
+@{
+    ViewBag.Title = "GetAllPerson";
+}
+
+<h2>Liste des Personnes</h2>
+<hr />
+
+
+<p></p>
+<div class="container col-xs-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Liste des Personnes
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th> ID </th>
+                    <th> PRENOM </th>
+                    <th> NOM </th>
+                    <th> EMAIL </th>
+                    <th> DATE DE NAISSANCE </th>
+                    <th> IMAGE</th>
+                    <th> PAYS</th>
+                    <th> Action</th>
+                </tr>
+                @{
+                    foreach (var p in Model)
+                    {
+                                <tr>
+                                    <td>@p.Id</td>
+                                    <td>@p.First_name </td>
+                                    <td>@p.Last_name </td>
+                                    <td>@p.Email</td>
+                                    <td>@p.Date_birth </td>
+                                    <td>
+                                       
+                                     <img src="@p.Image" alt="Sample Photo" />
+
+                                    </td>
+                                    <td>@p.Country </td>
+                                    
+                                    <td>
+                                        <a class="btn btn-warning " href="/person/@p.Id">Detail</a>
+                                        
+                                    </td>
+                                </tr>
+                    }
+                }
+            </table>
+
+        </div>
+    </div>
+</div>

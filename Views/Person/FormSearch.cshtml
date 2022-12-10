@@ -1,0 +1,39 @@
+﻿@model asp_tp3.Models.Person
+@{
+    ViewBag.Title = "FormSearch";
+}
+<br />
+<h3>Veuillez saisir le nom et le pays d'une personne donnée </h3>
+<hr />
+
+<form method="post" action="PersonSearch">
+    <div class="row mb-3">
+        <label>Prenom</label>
+        <input type="text" class="form-control" name="First_name"   />
+
+    </div>
+    <br />
+    <div class="row mb-3">
+        <label>Pays</label>
+        <input type="text" class="form-control" name="Country"  />
+
+    </div>
+    
+    <p></p>
+    <div class="row mb-3">
+        <div class=" col-sm-3 ">
+            <button type="submit" class="btn btn-primary"> Chercher</button>
+
+        </div>
+        <div class=" col-sm-3 ">
+            <a class="btn btn-outline-primary" href="#" role="button"> Annuler</a>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</form>

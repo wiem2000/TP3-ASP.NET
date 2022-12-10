@@ -1,0 +1,61 @@
+﻿@model asp_tp3.Models.Person
+@{
+    ViewBag.Title = "GetPerson";
+}
+
+
+
+
+@{
+    string classError = "invisible"; string classDetail = "visible";
+    if (ViewBag.ERROR == "Cet ID est invalide")
+    {
+        classError = "visible";
+        classDetail = "invisible";
+    }
+}
+
+
+<h2>Detail Personne </h2>
+<hr />
+
+<div class="container ">
+
+    <div class="@classError">
+        <div class="alert alert-warning alert-dismissable" role="alert">
+            <strong>@ViewBag.ERROR</strong>
+
+        </div>
+    </div>
+
+    <div class="card @classDetail" style="width: 50rem;">
+
+        <!-- Card image -->
+        <img class="card-img-top" src="@Model.Image" alt="Card image cap">
+
+        <!-- Card content -->
+        <div class="card-body " style="margin-top:10px">
+
+            <!-- Text -->
+            <ul class="list-group list-group-flush ">
+                <li class="list-group-item"><strong>ID :</strong>  @Model.Id</li>
+                <li class="list-group-item"><strong>PRENOM :</strong>  @Model.First_name</li>
+                <li class="list-group-item"><strong>NOM :</strong>  @Model.Last_name</li>
+                <li class="list-group-item"> <strong>EMAIL:</strong>  @Model.Email</li>
+                <li class="list-group-item"><strong>DATE DE NAISSANCE: </strong> @Model.Date_birth</li>
+                <li class="list-group-item"><strong>PAYS: </strong> @Model.Country</li>
+            </ul>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
